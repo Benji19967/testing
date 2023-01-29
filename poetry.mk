@@ -39,12 +39,7 @@ mypy: develop
 
 .PHONY: test
 test: develop
-	${POETRY} run pytest \
-	--cov=${APP_DIR} \
-	--cov-report=term \
-	--cov-report=xml:coverage.xml \
-	junit-xml=unittest.xml \
-	${PYTESTARGS}
+	${POETRY} run pytest
 
 .PHONY: wheel
 wheel: ${POETRY_VENV}
