@@ -4,6 +4,18 @@ from abc import ABC, abstractmethod
 class FileSystem(ABC):
     """
     Abstraction of the real file handling.
+
+    This allows us to test everything (except the implementation of this abstraction)
+    quickly and efficiently, in memory.
+
+    Should be as simple and generic as possible to limit chances
+    that this abstraction will introduce a bug.
+
+    Should be simpler than the technology that it wraps (our code is only
+    using a subset of all functionality).
+
+    Integration tests should then take care of asserting that the real implementation
+    of this abstraction is bug free.
     """
 
     @abstractmethod
