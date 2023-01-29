@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "testing"
+version = "0.1.0"
+description = "TDD best practices"
+authors = [Benjamin Labrecque]
+packages = [
+    { include = testing }
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.mypy]
+files = "testing"
+strict = true
+namespace_packages = true
+explicit_packages_bases = true
